@@ -1,0 +1,97 @@
+@import "../helpers/mixins";
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 40px;
+
+  .menu {
+    display: none;
+
+    @include breakpoint(mobile-max) {
+      display: block;
+    }
+  }
+
+  &_right {
+    @include breakpoint(mobile-max){
+      display: none;
+    }
+    .close{
+      display: none;
+      position: absolute;
+      right: 20px;
+      top: 10px;
+    }
+    ul {
+      display: flex;
+      list-style-type: none;
+      gap: 20px;
+
+      @include breakpoint(mobile-max) {
+        display: none;
+        // position: absolute;
+        // right: 0;
+        flex-direction: column;
+      }
+
+      li {
+        list-style-type: none;
+        a {
+          font-size: 16px;
+          color: #ccd6f6;
+          text-decoration: none;
+
+          &:hover {
+            color: #64ffda;
+          }
+        }
+      }
+    }
+  }
+
+  .menu-mobile {
+    display: block;
+    .close{
+      display: block;
+    }
+    ul {
+      @include breakpoint(mobile-max) {
+        display: block;
+        margin: 0 auto;
+        max-width: 96px;
+      }
+
+      li{
+        margin-bottom: 30px;
+      }
+    }
+
+    @include breakpoint(mobile-max){
+      background-color: white;
+      padding: 20px;
+      position: fixed;
+      top: 0px;
+      bottom: 0px;
+      right: 0px;
+      padding: 50px 10px;
+      width: min(75vw, 400px);
+      // height: 100vh;
+      outline: 0px;
+      background-color: #112240;
+      box-shadow: -10px 0px 30px -15px rgba(2,12,27,0.7);
+      z-index: 9;
+      transform: translateX(0vw);
+      visibility: visible;
+      transition: var(--transition);
+
+    }
+  }
+
+  .logoname {
+    a {
+      color: #ccd6f6;
+      text-decoration: none;
+    }
+  }
+}

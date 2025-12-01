@@ -1,0 +1,54 @@
+
+
+.hello-btn {
+  background-color: transparent;
+  font-size: 16px;
+  border: 0.35rem solid;
+  padding: 5px 10px;
+  border-image: conic-gradient(
+      from var(--angle),
+      var(--c2),
+      var(--c1) 0.1turn,
+      var(--c1) 0.15turn,
+      var(--c2) 0.25turn
+    )
+    15;
+  animation: borderRotate var(--d) linear infinite forwards;
+}
+
+.imgslider-wrap{
+  max-width: 400px;
+  margin: 0 auto;
+  width: 100%;
+
+  .imgslider{
+    display: flex;
+  }
+  
+  .btn-wrapper{
+    display: flex;
+    gap: 10px;
+  }
+
+}
+
+.imgslider-wrap {
+  position: relative;
+}
+
+.imgslider {
+  overflow: hidden;
+}
+
+.btn-wrapper {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+button {
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+
