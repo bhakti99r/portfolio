@@ -36,7 +36,7 @@ const HomePage = () => {
         <ul>
           <li>
             <a
-              href="https://github.com/bhakti199921/bhaktirane-html"
+              href="https://github.com/bhakti99r/"
               rel="noreferrer"
               target="_blank"
             >
@@ -211,6 +211,7 @@ const HomePage = () => {
         </div>
         <div
           className="getin-touched section"
+          id="contact"
           ref={(el) => (sectionRefs.current[4] = el)}
         >
           <h2 className="section-title">Get In Touched</h2>
@@ -219,7 +220,13 @@ const HomePage = () => {
             inbox is always open. Whether you have a question or just want to
             say hi, I’ll try my best to get back to you!
           </p>
-          <a href="mailto:rbhakti12@gmail.com" className="btn btn-contact">
+          <a
+            href="mailto:rbhakti12@gmail.com"
+            // href="https://mail.google.com/mail/?view=cm&fs=1&to=rbhakti12@gmail.com"
+            // target="_blank"
+            // rel="noreferrer"
+            className="btn btn-contact"
+          >
             Let's Connect
           </a>
         </div>
