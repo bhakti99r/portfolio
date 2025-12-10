@@ -1,36 +1,35 @@
+import { useState } from "react";
 import "../assets/scss/component/_header.scss";
 import { Link } from "react-router-dom";
+import { IoIosClose } from "react-icons/io";
+import { RiMenu3Line } from "react-icons/ri";
 
 const Header = () => {
-  const toggleNavbar = () => {
-    alert("hello");
-    let sidebar = document.getElementById("navbar");
-    let body2 = document.getElementById("root");
+  const [isOpen, setIsOpen] = useState(false);
 
-    sidebar.classList.add("menu-mobile");
-    body2.classList.add("show-overlay");
+  const toggleNavbar = () => {
+    setIsOpen(true);
   };
 
   const removeToggleNavbar = () => {
-    let sidebar = document.getElementById("navbar");
-    let body2 = document.getElementById("root");
-
-    sidebar.classList.remove("menu-mobile");
-    body2.classList.remove("show-overlay");
+    setIsOpen(false);
   };
   return (
     <div>
       {/* <div className="container"> */}
-      <div className="navbar">
+      <div className={`navbar ${isOpen ? "show-overlay" : ""}`}>
         <h1 className="logoname">
           <Link to="/">Bhakti Rane</Link>
         </h1>
         <div onClick={toggleNavbar} className="menu">
-          menu
+          <RiMenu3Line />
         </div>
-        <div className="navbar_right" id="navbar">
+        <div
+          className={`navbar_right ${isOpen ? "menu-mobile" : ""}`}
+          id="navbar"
+        >
           <div className="close" onClick={removeToggleNavbar}>
-            close
+            <IoIosClose />
           </div>
           <ul>
             <li>

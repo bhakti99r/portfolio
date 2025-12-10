@@ -5,7 +5,15 @@
   justify-content: space-between;
   padding: 20px 40px;
 
+  @include breakpoint(mobile-max) {
+    padding: 20px 15px;
+  }
+
   .menu {
+    svg {
+      color: white;
+      font-size: 25px;
+    }
     display: none;
 
     @include breakpoint(mobile-max) {
@@ -13,15 +21,24 @@
     }
   }
 
+  .show-overlay {
+    background: rgba(0, 0, 0, 0.6);
+  }
+
   &_right {
-    @include breakpoint(mobile-max){
+    @include breakpoint(mobile-max) {
       display: none;
     }
-    .close{
+    .close {
       display: none;
       position: absolute;
       right: 20px;
       top: 10px;
+
+      svg {
+        color: white;
+        font-size: 25px;
+      }
     }
     ul {
       display: flex;
@@ -52,7 +69,7 @@
 
   .menu-mobile {
     display: block;
-    .close{
+    .close {
       display: block;
     }
     ul {
@@ -62,29 +79,26 @@
         max-width: 96px;
       }
 
-      li{
+      li {
         margin-bottom: 30px;
       }
     }
 
-    @include breakpoint(mobile-max){
+    @include breakpoint(mobile-max) {
       background-color: white;
       padding: 20px;
       position: fixed;
-      top: 0px;
-      bottom: 0px;
-      right: 0px;
+      right: 0;
+      top: 0;
       padding: 50px 10px;
       width: min(75vw, 400px);
-      // height: 100vh;
+      height: 100vh;
       outline: 0px;
       background-color: #112240;
-      box-shadow: -10px 0px 30px -15px rgba(2,12,27,0.7);
+      box-shadow: -10px 0px 30px -15px rgba(2, 12, 27, 0.7);
       z-index: 9;
-      transform: translateX(0vw);
       visibility: visible;
       transition: var(--transition);
-
     }
   }
 

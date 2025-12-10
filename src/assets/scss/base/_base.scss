@@ -81,6 +81,10 @@ body {
   align-items: baseline;
   //   position: relative;
 
+  @include breakpoint(mobile-max) {
+    flex-direction: column;
+  }
+
   &::after {
     content: "";
     display: block;
@@ -90,6 +94,12 @@ body {
     height: 1px;
     margin-left: 20px;
     background-color: #233554;
+
+    @include breakpoint(mobile-max) {
+      width: 225px;
+      top: 10px;
+      // margin-left: 0;
+    }
   }
 }
 
